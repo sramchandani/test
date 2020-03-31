@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "1DPAYF04GADdU4ntU8IAab",
+    "name" : "tf_CreateMaskingParameter",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "uglxbdypKwKBqRi-gt-382055-2020-03-25T17:35:56.333Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "bwXavFtzZi5ey0G7ra3XcV",
+    "name" : "mct_CreateMaskingParameter",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01002K0Z00000000008L"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Harsha_Project/Marketo"
+  } ]
+}
