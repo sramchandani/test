@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "kJ8GEGfRmm8fgutRHx1nYC",
+    "name" : "tf_CreateMaskingParameter",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "NZPD4ARW8UBM7zs-gt-494372-2020-03-25T21:19:36.631Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "9cRX6ojapAgh2kI5wUEPMi",
+    "name" : "mct_CreateMaskingParameter",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01002K0Z00000000008N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Export_Demo"
+  } ]
+}

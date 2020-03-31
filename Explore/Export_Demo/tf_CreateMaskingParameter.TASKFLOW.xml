@@ -1,0 +1,125 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NZPD4ARW8UBM7zs-gt-494372-2020-03-25T21:19:36.631Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_CreateMaskingParameter-2</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>hgummadavelli@informatica.com.demo</types1:CreatedBy>
+      <types1:CreationDate>2020-03-25T21:19:37Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_CreateMaskingParameter"
+                   name="tf_CreateMaskingParameter-2"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="final_mask_param" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CreateMaskingParameter" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-CreateMaskingParameter</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k878kywh" targetId="k878kyx3"/>
+               </start>
+               <eventContainer id="k878kyx3">
+                  <service id="k878kywg">
+                     <title>CreateMaskingParameter</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_CreateMaskingParameter</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">9cRX6ojapAgh2kI5wUEPMi</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-CreateMaskingParameter">temp.CreateMaskingParameter</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.CreateMaskingParameter/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.CreateMaskingParameter/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.CreateMaskingParameter/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.CreateMaskingParameter/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.CreateMaskingParameter/inout/param_masking">param_masking</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="k878kyx7" targetId="k878kyx6"/>
+                  <events>
+                     <catch faultField="temp.CreateMaskingParameter/fault"
+                            id="k878kyx1"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.CreateMaskingParameter/fault"
+                            id="k878kyx2"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <assignment id="k878kyx6">
+                  <title>AssignMaskingParameter</title>
+                  <operation source="constant" to="temp.final_mask_param">{$temp.CreateMaskingParameter[1]/inout[1]/param_masking}</operation>
+                  <link id="k878kyx8" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-CreateMaskingParameter"
+                              isByCopy="true"
+                              name="mct-CreateMaskingParameter">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters" name="inout" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>kJ8GEGfRmm8fgutRHx1nYC</types1:GUID>
+      <types1:DisplayName>tf_CreateMaskingParameter</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-03-31T10:46:38.147Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
